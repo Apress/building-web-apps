@@ -1,0 +1,24 @@
+<header class="navbar navbar-expand-sm navbar-light bg-primary navbar-static-top">
+  <div class="container">
+    <app-nav-menu></app-nav-menu>
+  </div>
+</header>
+<div class="page container">
+  <div class="card">
+    <nav class="card-header d-none d-sm-block">
+      <div class="store-logo">
+        <a routerLink="/products"><img src="images/store-logo.png" alt="Spy Store" /></a>
+      </div>
+      <ul class="nav nav-pills d-none d-lg-flex"></ul>
+    </nav>
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <a href="http://github.com"><img src="images/octocat.png" class="social-icon" /> GitHub</a>
+    <small class="text-muted">&copy; 2019 - SpyStore.Angular2 PKB Productions</small>
+  </div>
+</footer>

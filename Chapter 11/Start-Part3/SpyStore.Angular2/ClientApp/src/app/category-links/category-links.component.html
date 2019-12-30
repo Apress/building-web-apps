@@ -1,0 +1,3 @@
+<li class="nav-item" *ngFor="let category of categories">
+  <a class="nav-link" [routerLink]="['/products', category.Id]">{{category.CategoryName}}</a>
+</li>

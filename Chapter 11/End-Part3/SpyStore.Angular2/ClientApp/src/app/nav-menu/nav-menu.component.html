@@ -1,0 +1,38 @@
+<div class="navbar-header">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".header-collapse" aria-controls="navbarSupportedContent" aria-label="Toggle navigation" [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand d-inline-block d-sm-none" href="#">SPY STORE</a>
+</div>
+
+<nav class="collapse navbar-collapse header-collapse" [ngClass]='{ "in": isExpanded }'>
+  <ul class="nav navbar-nav ml-auto">
+    <li dropdown class="nav-item dropdown categories-dropdown d-block d-lg-none">
+      <a dropdownToggle routerLink="/products" (click)="false" class="nav-link dropdown-toggle">CATEGORIES <span class="caret"></span></a>
+      <ul *dropdownMenu class="dropdown-menu"></ul>
+    </li>
+    <li class="nav-item"><a class="nav-link" routerLink="/cart"><span class="fa fa-shopping-cart"></span> CART</a></li>
+    <li class="nav-item" *ngIf="!user || user.Id == 0"><a class="nav-link" routerLink="/login"><span class="fa fa-lock"></span> LOGIN</a></li>
+
+    <li dropdown class="nav-item dropdown" (click)="false" *ngIf="user && user.Id > 0">
+      <a class="dropdown-toggle nav-link" dropdownToggle><span class="fa fa-user"></span> ACCOUNT <span class="caret"></span></a>
+      <ul *dropdownMenu class="dropdown-menu account-dropdown-menu">
+        <li class="dropdown-header">Welcome, {{user?.FullName}}</li>
+        <li class="nav-item"><a class="nav-link" routerLink="/orderHistory">ORDER HISTORY</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="logout()">LOGOFF</a></li>
+      </ul>
+    </li>
+    <li dropdown class="nav-item dropdown search-dropdown" [autoClose]="false">
+      <a href="#" (click)="false" dropdownToggle class="dropdown-toggle nav-link" data-toggle="dropdown"><span class="glyphicon glyphicon-search"></span> SEARCH</a>
+      <div *dropdownMenu class="dropdown-menu dropdown-menu-right bg-primary  search-dropdown-menu">
+        <div class="input-group md-4">
+          <label class="sr-only" for="searchString">Search</label>
+          <input type="text" id="searchString" name="searchString" [(ngModel)]="searchText" class="form-control" placeholder="SEARCH">
+          <span class="input-group-append">
+            <button class="btn btn-light" type="button" (click)="search()"><span class="fa fa-search"></span></button>
+          </span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
