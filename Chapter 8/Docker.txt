@@ -1,0 +1,9 @@
+docker pull mcr.microsoft.com/mssql/server:2017-latest
+
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=P@ssw0rd" -e "MSSQL_PID=Express" -p 5433:1433 --name SpyStore21 -d mcr.microsoft.com/mssql/server:2017-latest
+
+
+docker build -f "C:\GitHub\Books\Responsive\SecondEdition\Code\Chapter6\SpyStore.Service\Dockerfile" -t spystoreservice:dev --target base  --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=SpyStore.Service" "C:\GitHub\Books\Responsive\SecondEdition\Code\Chapter6" 
+
+docker-compose up
+docker-compose down

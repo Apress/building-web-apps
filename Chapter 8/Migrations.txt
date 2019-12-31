@@ -1,0 +1,12 @@
+dotnet ef database update 0 -c SpyStore.Dal.EfStructures.StoreContext
+dotnet ef migrations remove -c SpyStore.Dal.EfStructures.StoreContext
+
+dotnet ef migrations add Initial -o EfStructures\Migrations -c SpyStore.Dal.EfStructures.StoreContext
+dotnet ef database update Initial -c SpyStore.Dal.EfStructures.StoreContext
+
+dotnet ef migrations add TSQL -c SpyStore.Dal.EfStructures.StoreContext
+dotnet ef database update TSQL -c SpyStore.Dal.EfStructures.StoreContext
+
+dotnet ef migrations add Final -c SpyStore.Dal.EfStructures.StoreContext
+dotnet ef database update Final -c SpyStore.Dal.EfStructures.StoreContext
+

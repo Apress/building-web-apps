@@ -1,0 +1,43 @@
+{
+  "swaggerGenerator": {
+    "fromSwagger": {
+      "url": "http://localhost:55882/swagger/v1/swagger.json",
+      "output": null
+    }
+  },
+  "codeGenerators": {
+      "swaggerToTypeScriptClient": {
+      "rxJsVersion": 6.4,
+      "className": "{controller}Client",
+      "moduleName": "",
+      "namespace": "",
+      "typeScriptVersion": 3.3,
+      "template": "Fetch",
+      "promiseType": "Promise",
+      "dateTimeType": "Date",
+      "nullValue": "Null",
+      "generateClientClasses": true,
+      "generateClientInterfaces": false,
+      "generateOptionalParameters": true,
+      "wrapDtoExceptions": false,
+      "clientBaseClass": null,
+      "useTransformOptionsMethod": false,
+      "useTransformResultMethod": false,
+      "generateDtoTypes": true,
+      "operationGenerationMode": "MultipleClientsFromOperationId",
+      "markOptionalProperties": true,
+      "generateCloneMethod": false,
+      "injectionTokenType": "InjectionToken",
+      "httpClass": "HttpClient",
+      "typeStyle": "Class",
+      "generateDefaultValues": true,
+      "excludedTypeNames": [],
+      "handleReferences": false,
+      "generateConstructorInterface": true,
+      "importRequiredTypes": true,
+      "useGetBaseUrlMethod": false,
+      "baseUrlTokenName": "ApiBaseUrl",
+      "output": "./src/services/api.client.ts" 
+    }  
+  }
+}

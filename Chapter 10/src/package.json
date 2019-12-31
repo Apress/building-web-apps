@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "3.5.3",
+    "@types/jquery": "3.3.30"
+  }
+}
