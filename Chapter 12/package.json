@@ -13,7 +13,7 @@
     "fetch": "1.1.0",
     "font-awesome": "4.7.0",
     "global": "^4.4.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.14.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-router": "5.0.1",
